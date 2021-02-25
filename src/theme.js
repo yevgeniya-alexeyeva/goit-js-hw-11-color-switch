@@ -12,11 +12,12 @@ const randomIntegerFromInterval = (min, max) => {
 
 function changeColorTheme() {
   const timerId = setInterval(() => {
-      ref.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)];
+    ref.body.style.backgroundColor =
+      colors[randomIntegerFromInterval(0, colors.length - 1)];
   }, 1000);
 
   ref.buttonStart.removeEventListener('click', changeColorTheme);
-  
+
   ref.buttonStop.addEventListener('click', () => {
     clearInterval(timerId);
     ref.buttonStart.addEventListener('click', changeColorTheme);
