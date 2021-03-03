@@ -17,10 +17,12 @@ function changeColorTheme() {
   }, 1000);
 
   ref.buttonStart.removeEventListener('click', changeColorTheme);
+  ref.buttonStart.disabled = true;
 
   ref.buttonStop.addEventListener('click', () => {
     clearInterval(timerId);
     ref.buttonStart.addEventListener('click', changeColorTheme);
+    ref.buttonStart.disabled = false;
   });
 }
 
